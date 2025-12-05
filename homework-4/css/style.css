@@ -1,0 +1,42 @@
+body {
+	font-family: sans-serif;
+}
+
+.main__form {
+	border: 1px solid #000;
+	border-radius: 5px;
+	max-width: 250px; 
+	margin: 0px 0px 0px 5px;
+}
+.fieldset {
+	border: none;
+}
+
+h3 {
+	margin: 10px 0px;
+	font-size: 15px;
+}
+
+.form {
+	display: block;
+	margin: 3px 0px 8px 0px;
+}
+
+textarea {
+	max-height: 112px;
+	min-height: 25px;
+	resize: vertical;
+}
+
+input {
+	margin: 5px 0px;
+	padding: 0px 0px 0px 5px;
+}
+
+.checkbox span {
+	font-size: 14px;
+}
+button {
+	cursor: pointer;
+	margin: 0px 0px 10px 12px;
+}
