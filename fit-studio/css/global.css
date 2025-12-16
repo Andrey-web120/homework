@@ -4,12 +4,19 @@ html {
 }
 
 *, *::before, *::after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  min-width: 375px;
   min-height: 100vh;
 }
 
@@ -25,6 +32,13 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 a, button {
   outline: none;
 }
@@ -35,17 +49,18 @@ a, button {
   padding: 0 15px;
 }
 
-.article {
-  padding-top: 80px;
-  padding-bottom: 120px;
-}
-
 .text {
   font-weight: 400;
   font-size: 16px;
   line-height: 130%;
   color: #535755;
 }
+
+.article {
+  padding-top: 80px;
+  padding-bottom: 120px;
+}
+
 
 .button {
   display: inline-block;
@@ -58,6 +73,8 @@ a, button {
   text-align: center;
   color: #fff;
   background-color: #3596ED;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
   transition: all .3s;
 }
 
@@ -107,9 +124,58 @@ button.button:disabled {
   color: #858E8A;
 }
 
-a:focus-visible, 
+.decor::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: calc(50% - 250px);
+  height: 48px;
+  background: url("../images/decor-icon.svg") repeat-x;
+}
+
+a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
   outline: 2px solid #3596ED;
   outline-offset: 1px;
+}
+
+@media (width <=992px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .title__large {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+
+  .home__page .title__large {
+    max-width: inherit;
+    text-align: center;
+  }
+}
+
+@media (width <=768px) {
+  .container {
+    max-width: 576px;
+  }
+
+  .title__medium {
+    font-size: 22px;
+  }
+}
+
+@media (width <=576px) {
+  .section {
+    margin-bottom: 80px;
+  }
+
+  .title__large {
+    font-size: 32px;
+  }
+
+  .title__medium {
+    font-size: 18px;
+  }
 }
