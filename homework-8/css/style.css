@@ -16,6 +16,7 @@ body {
 .wrapper {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: auto;
 	min-height: 100vh;
 }
 
@@ -28,31 +29,27 @@ body {
 .aside {
 	grid-row: 2 / 12 span;
 	background-color: yellow;
-	min-height: 150px;
 }
 
 .main {
-	grid-column: 3 / 12 span;
+	grid-column: 2 / 12 span;
 	background-color: green;
-	min-height: 100px;
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
 
 .main .container {
 	display: grid;
-	grid-template-rows: repeat(2, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	grid-template-areas:
 		"one two three four"
 		"five six seven eight";
+	gap: 10px;
 }
 
 .article {
 	background-color: rgb(222, 110, 5);
-	max-width: 245px;
-	min-height: 310px;
-	margin-right: 10px;
-	margin-bottom: 10px;
+	min-height: 300px;
 }
 
 .article:nth-child(1) {
@@ -90,5 +87,25 @@ body {
 .footer {
 	grid-column: 1 / 12 span;
 	background-color: blue;
-	min-height: 150px;
+	min-height: 200px;
+}
+
+@media (width <=1200px) {
+	.main .container {
+		grid-template-columns: repeat(auto-fill, minmax(284px, 1fr));
+		flex-wrap: wrap;
+	}
+	.aside {
+		width: 160px;
+	}
+}
+
+
+@media (width <=768px) {
+	.main {
+	grid-column: 1 / 12 span;
+	}
+	.aside {
+		display: none;
+	}
 }
