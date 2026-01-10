@@ -1,0 +1,77 @@
+$("#rateYo,#rateYo-2,#rateYo-3,#rateYo-7").rateYo({
+    rating: 4.5,
+    readOnly: true,
+    spacing: "5px",
+    numStars: 5,
+    minValue: 0,
+    maxValue: 5,
+    starWidth: "18px",
+    normalFill: 'white',
+    ratedFill: '#ffc633',
+})
+$("#rateYo-1").rateYo({
+    rating: 3.5,
+    readOnly: true,
+    spacing: "5px",
+    numStars: 4,
+    minValue: 0,
+    maxValue: 4,
+    starWidth: "18px",
+    normalFill: 'white',
+    ratedFill: '#ffc633',
+})
+$("#rateYo-4").rateYo({
+    rating: 5,
+    readOnly: true,
+    spacing: "5px",
+    numStars: 5,
+    minValue: 0,
+    maxValue: 5,
+    starWidth: "18px",
+    normalFill: 'white',
+    ratedFill: '#ffc633',
+})
+$("#rateYo-5").rateYo({
+    rating: 4,
+    readOnly: true,
+    spacing: "5px",
+    numStars: 4,
+    minValue: 0,
+    maxValue: 4,
+    starWidth: "18px",
+    normalFill: 'white',
+    ratedFill: '#ffc633',
+})
+$("#rateYo-6").rateYo({
+    rating: 3,
+    readOnly: true,
+    spacing: "5px",
+    numStars: 3,
+    minValue: 0,
+    maxValue: 3,
+    starWidth: "18px",
+    normalFill: 'white',
+    ratedFill: '#ffc633',
+})
+$("#rateYo-8,#rateYo-9,#rateYo-11,#rateYo-12").rateYo({
+    rating: 5,
+    readOnly: true,
+    spacing: "5px",
+    numStars: 5,
+    minValue: 0,
+    maxValue: 5,
+    starWidth: "22px",
+    normalFill: 'white',
+    ratedFill: '#ffc633',
+})
+$("#rateYo-10").rateYo({
+    rating: 4,
+    readOnly: true,
+    spacing: "5px",
+    numStars: 5,
+    minValue: 0,
+    maxValue: 5,
+    starWidth: "22px",
+    normalFill: 'white',
+    ratedFill: '#ffc633',
+})

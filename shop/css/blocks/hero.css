@@ -1,0 +1,274 @@
+@media (width > 1130px) {
+	.hero__container {
+		display: flex;
+	}
+}
+
+@media (width <=1130px) {
+	.hero__container {
+		display: block;
+	}
+}
+
+.hero {
+	background-color: var(--background-color-3);
+	padding-top: 132px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@media (width > 768px) {
+	.hero__title {
+		font-family: var(--second-family);
+		font-weight: 900;
+		font-size: 57px;
+		line-height: 64px;
+		color: var(--black-color);
+		max-width: 750px;
+		padding-bottom: 34px;
+	}
+}
+
+@media (width <=768px) {
+	.hero__title {
+		font-family: var(--second-family);
+		font-weight: 900;
+		font-size: 32px;
+		line-height: 34px;
+		color: var(--black-color);
+		padding-bottom: 20px;
+	}
+}
+
+
+
+@media (width > 768px) {
+	.hero__text {
+		max-width: 480px;
+		padding-bottom: 32px;
+	}
+}
+
+@media (width <=768px) {
+	.hero__text {
+		max-width: 480px;
+		padding-bottom: 23px;
+	}
+}
+
+
+.hero__button {
+	border-radius: 62px;
+	width: 210px;
+	height: 52px;
+	background: var(--black-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+}
+
+@media (width <=768px) {
+	.hero__button {
+		width: 358px;
+	}
+
+	.hero__button-wrapper {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.hero__text-button {
+	height: 22px;
+	font-weight: 500;
+	font-size: 16px;
+	color: var(--main-color);
+}
+
+.hero__list {
+	padding-top: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
+@media (width <=768px) {
+	.hero__list {
+		padding-top: 20px;
+		justify-content: center;
+	}
+}
+
+.hero__item:first-child {
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	padding-right: 20px;
+}
+
+.hero__item:nth-child(2) {
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	padding-right: 25px;
+}
+
+@media (width <=610px) {
+	.hero__item:nth-child(2) {
+		border-right: 0;
+	}
+}
+
+@media (width <=540px) {
+	.hero__item:nth-child(2) {
+		padding-right: 0px;
+	}
+}
+
+
+.hero__img {
+	display: flex;
+	justify-content: center;
+}
+
+.hero__wrapper {
+	position: relative;
+}
+
+.hero__img::before {
+	position: absolute;
+	content: "";
+	width: 56px;
+	height: 56px;
+	display: block;
+	top: 42%;
+	left: 0%;
+	background-image: url("../../icons/black-star-small.svg");
+}
+
+@media (width <=576px) {
+	.hero__img::before {
+		width: 44px;
+		height: 44px;
+		background-image: url("../../icons/black-star-small-sm.svg");
+	}
+}
+
+.hero__img::after {
+	position: absolute;
+	content: "";
+	width: 104px;
+	height: 104px;
+	display: block;
+	top: 12%;
+	right: 5%;
+	background-image: url("../../icons/black-star-big.svg");
+}
+
+@media (width <=1130px) {
+	.hero__img::after {
+		right: clamp(-0.438rem, -5.642rem + 26.02vw, 13.875rem);
+	}
+}
+
+@media (width <=576px) {
+	.hero__img::after {
+		width: 76px;
+		height: 76px;
+		background-image: url("../../icons/black-star-big-sm.svg");
+	}
+}
+
+@media (width > 1130px) {
+	.hero__images {
+		padding-right: 40px;
+		width: 800px;
+		height: 850px;
+	}
+}
+
+@media (width <=1130px) {
+	.hero__images {
+		padding-right: 0px;
+		width: 390px;
+		height: 448px;
+	}
+}
+
+.hero__company {
+	display: flex;
+	flex-direction: column;
+	padding: 50px 0px 39px 0px;
+	min-width: 320px;
+	min-height: 122px;
+	background: #000;
+}
+
+.hero__company-list {
+	/* display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
+}
+
+.hero__company-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@media (width > 768px) {
+	.hero__icon-1 {
+		width: 167px;
+		height: 37px;
+	}
+
+	.hero__icon-2 {
+		width: 91px;
+		height: 38px;
+	}
+
+	.hero__icon-3 {
+		width: 156px;
+		height: 36px;
+	}
+
+	.hero__icon-4 {
+		width: 194px;
+		height: 32px;
+	}
+
+	.hero__icon-5 {
+		width: 207px;
+		height: 34px;
+	}
+}
+
+@media (width <=768px) {
+	.hero__icon-1 {
+		width: 117px;
+		height: 24px;
+	}
+
+	.hero__icon-2 {
+		width: 64px;
+		height: 27px;
+	}
+
+	.hero__icon-3 {
+		width: 110px;
+		height: 26px;
+	}
+
+	.hero__icon-4 {
+		width: 127px;
+		height: 21px;
+	}
+
+	.hero__icon-5 {
+		width: 135px;
+		height: 22px;
+	}
+}
