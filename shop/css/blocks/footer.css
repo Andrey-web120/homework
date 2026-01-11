@@ -1,0 +1,150 @@
+.footer {
+	background: var(--background-color-2);
+}
+
+.footer__top {
+	padding: 140px 0 50px;
+}
+
+.footer__top-inner {
+	display: flex;
+	/* display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer__top-wrapper {
+	display: flex;
+}
+
+.footer__top-col {
+	display: flex;
+	flex-direction: column;
+	padding: 0 15px;
+}
+
+.footer__top-col:first-child {
+	max-width: 248px;
+}
+
+.footer__logo {
+	display: block;
+	font-family: var(--third-family);
+	font-weight: 700;
+	font-size: 33px;
+	color: var(--black-color);
+	margin-bottom: 25px;
+}
+
+.footer__top-text {
+	font-size: 14px;
+	line-height: 22px;
+	color: rgba(0, 0, 0, 0.6);
+	width: 248px;
+}
+
+.footer__socials {
+	display: flex;
+	padding-bottom: 25px;
+}
+
+.footer__socials-item {
+	margin-right: 12px;
+	padding-top: 35px;
+}
+
+.footer__top-title {
+	font-weight: 550;
+	font-size: 16px;
+	line-height: 18px;
+	letter-spacing: 0.19em;
+	text-transform: uppercase;
+	color: var(--black-color);
+	margin-bottom: 26px;
+}
+
+.footer__top-item {
+	margin-bottom: 16px;
+}
+
+.footer__item-link {
+	font-size: 16px;
+	line-height: 19px;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.footer__bottom {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	padding-top: 25px;
+}
+
+.footer__bottom-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer__copy {
+	font-size: 14px;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.footer__card-list {
+	display: flex;
+}
+
+@media (width <=876px) {
+	.footer__top-inner {
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+
+	.footer__top-col:nth-child(2) {
+		padding-right: 25px;
+	}
+
+	.footer__top-col:nth-child(4) {
+		padding-right: 25px;
+	}
+}
+
+@media (width <=768px) {
+	.footer__logo {
+		font-size: 28px;
+	}
+
+	.footer__top-text {
+		line-height: 20px;
+	}
+
+	.footer__top-title {
+		margin-bottom: 16px;
+		font-size: 14px;
+		letter-spacing: 0.21em;
+	}
+
+	.footer__top-list {
+		font-size: 14px;
+		line-height: 16px;
+	}
+
+	.footer__top-item {
+		margin-bottom: 12px;
+	}
+
+	.footer__bottom-inner {
+		flex-direction: column;
+
+	}
+
+	.footer__copy {
+		padding-bottom: 16px;
+	}
+}
+
+@media (width <=423px) {
+	.footer__top-text {
+		width: 352px;
+	}
+}

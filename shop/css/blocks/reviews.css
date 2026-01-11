@@ -1,0 +1,145 @@
+.reviews__heading {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.reviews__slider {
+    padding-bottom: 80px;
+}
+
+.reviews__slider-arrows {
+    display: flex;
+}
+
+.reviews__slider-button {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0px;
+    z-index: 2;
+    width: 24px;
+    height: 24px;
+    color: var(--black-color);
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: all .3s;
+}
+
+.reviews__slider-prev {
+    margin-right: 40px;
+}
+
+.reviews__inner {
+    display: flex;
+    gap: 7px;
+}
+
+.reviews__slide {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: 0px 20px 0px 0px;
+    padding: 28px 32px;
+    width: 400px;
+    height: 240px;
+}
+
+.reviews__slide:last-child {
+    margin: 0;
+}
+
+.reviews__arrivalsrateYo {
+    margin-bottom: 15px;
+}
+
+.reviews__text {
+    padding-top: 17px;
+}
+
+.reviews__box {
+    display: flex;
+    border-radius: 20px;
+    padding: 36px 64px;
+    max-width: 1240px;
+    background: var(--black-color);
+    margin-bottom: -98px;
+    position: relative;
+    z-index: 2;
+}
+
+.reviews__box-input::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.reviews__box-title {
+    max-width: 689px;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 45px;
+    color: var(--main-color);
+    font-family: var(--second-family);
+}
+
+.reviews__box-button {
+    border-radius: 62px;
+    padding: 12px 16px;
+    width: 349px;
+    height: 46px;
+    background: #fff;
+}
+
+.reviews__box-input {
+    margin-bottom: 12px;
+    border-radius: 62px;
+    border: none;
+    padding: 12px 16px 12px 52px;
+    width: 349px;
+    height: 48px;
+}
+
+@media (width <=576px) {
+
+    .reviews__box-button,
+    .reviews__box-input {
+        width: 275px;
+    }
+
+    .reviews__box {
+        padding: 36px 40px;
+    }
+}
+
+.reviews__box-wrapper {
+    position: relative;
+}
+
+.reviews__box-wrapper::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-image: url("../../icons/mail-icon.svg");
+    width: 21px;
+    height: 16px;
+}
+
+@media (width <=992px) {
+    .reviews__box-title {
+        max-width: 325px;
+        font-size: 30px;
+        line-height: 35px;
+    }
+}
+
+@media (width <=768px) {
+    .reviews__box {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .reviews__box-input::placeholder {
+        font-size: 14px;
+    }
+}
