@@ -42,6 +42,10 @@
 
 }
 
+.style__choose-item {
+    min-width: 257px;
+}
+
 .style__choose-item:first-child {
     position: relative;
 }
@@ -56,6 +60,7 @@
 
 .style__choose-item:last-child {
     position: relative;
+    min-width: 257px;
 }
 
 .style__choose-text-1 {
@@ -75,6 +80,7 @@
     .style__title {
         font-size: 30px;
         line-height: 120%;
+
     }
 
     .style-choose {
@@ -90,6 +96,10 @@
     .style__img {
         width: 310px;
         height: 190px;
+    }
+
+    .style__title {
+        width: 246px;
     }
 
     .style-choose img {
