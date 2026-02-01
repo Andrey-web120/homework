@@ -44,76 +44,53 @@ const deleteTodoById = (todos, todoId) => {
   return todos;
 };
 
-const todoForm = document.querySelector(".form");
-const todoInput = document.querySelector(".input");
-const todosContainer = document.querySelector(".todos");
+const formElement = document.querySelector(".form");
+const inputElement = document.querySelector(".input");
+const todosElement = document.querySelector(".todos");
 
-const createTodoElement = todoData => {
-  const listItem = document.createElement("li");
-  listItem.classList.add("todo");
-  listItem.dataset.id = todoData[todoKeys.id]; 
-
-  const textDiv = document.createElement("div");
-  textDiv.classList.add("todo-text");
-  textDiv.textContent = todoData[todoKeys.text];
-  if (todoData[todoKeys.is_completed]) {
-    listItem.classList.add("active");
-  }
-  const actionsDiv = document.createElement("div");
-  actionsDiv.classList.add("todo-actions");
-
-  const completeButton = document.createElement("button");
-  completeButton.classList.add("button-complete", "button");
-  completeButton.innerHTML = "&#10004;"; 
-  completeButton.onclick = () => handleToggleComplete(todoData[todoKeys.id]);
-  const deleteButton = document.createElement("button");
-  deleteButton.classList.add("button-delete", "button");
-  deleteButton.innerHTML = "&#10006;"; 
-  deleteButton.onclick = () => handleDeleteTodo(todoData[todoKeys.id]);
-  actionsDiv.appendChild(completeButton);
-  actionsDiv.appendChild(deleteButton);
-
-  listItem.appendChild(textDiv);
-  listItem.appendChild(actionsDiv);
-
-  return listItem;
+const createTodoElement = todo => {
+  const todoElement = document.createElement("li");
+  todoElement.classList.add("todo");
+  todoElement.dataset.id = todo[todoKeys.id];
+  todoElement.innerHTML = `
+	<div class="todo-text">${todo[todoKeys.text]}</div>
+  <div class="todo-actions">
+		<button class="button-complete button">&#10004;</button>
+		<button class="button-delete button">&#10006;</button>
+	</div>
+	`;
+  return todoElement;
 };
-const renderTodos = () => {
-  if (!todosContainer) return;
-  todosContainer.innerHTML = "";
-  todos.forEach(todoData => {
-    const element = createTodoElement(todoData);
-    todosContainer.appendChild(element);
-  });
-};
+
 const handleCreateTodo = (todos, text) => {
-  const newTodoData = createTodo(todos, text);
-  if (todosContainer) {
-    const newElement = createTodoElement(newTodoData);
-    todosContainer.appendChild(newElement);
+  const todo = createTodo(todos, text);
+  const todoElement = createTodoElement(todo);
+  todosElement.prepend(todoElement);
+};
+
+formElement.addEventListener("submit", event => {
+  event.preventDefault();
+
+  const text = inputElement.value.trim();
+  if (!text) return;
+
+  handleCreateTodo(todos, text);
+  inputElement.value = "";
+});
+
+todosElement.addEventListener("click", ({ target }) => {
+  const todo = target.closest(".todo");
+  if (!todo) return;
+
+  const todoId = Number(todo.dataset.id);
+
+  if (target.matches(".button-complete")) {
+    completeTodoById(todos, todoId);
+    todo.classList.toggle("completed");
   }
-};
-const handleToggleComplete = todoId => {
-  const updated = completeTodoById(todos, todoId);
-  if (updated) {
-    renderTodos();
+
+  if (target.matches(".button-delete")) {
+    deleteTodoById(todos, todoId);
+    todo.remove();
   }
-};
-
-const handleDeleteTodo = todoId => {
-  deleteTodoById(todos, todoId);
-  renderTodos(); 
-};
-if (todoForm) {
-  todoForm.addEventListener("submit", event => {
-    event.preventDefault();
-
-    const text = todoInput.value.trim();
-
-    if (text) {
-      handleCreateTodo(todos, text);
-      todoInput.value = "";
-      todoInput.focus();
-    }
-  });
-}
+});
