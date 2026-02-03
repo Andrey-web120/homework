@@ -6,6 +6,9 @@ export const productSlider = () => {
     mousewheel: {
       forceToAxis: true,
     },
+    autoplay: {
+      delay: 5000,
+    },
     navigation: {
       prevEl: ".product__slider-button--prev",
       nextEl: ".product__slider-button--next",
